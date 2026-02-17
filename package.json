@@ -1,0 +1,34 @@
+{
+  "name": "xpcrawl",
+  "version": "1.0.1",
+  "description": "A versatile Puppeteer-based web crawler with XPath support, pagination, piping, and stealth capabilities.",
+  "main": "lib/crawler.js",
+  "types": "lib/crawler.d.ts",
+  "bin": {
+    "xpcrawl": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:examples": "tsc"
+  },
+  "keywords": [
+    "crawler",
+    "puppeteer",
+    "xpath",
+    "scraping",
+    "stealth",
+    "cli",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^24.37.3",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  }
+}

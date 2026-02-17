@@ -1,0 +1,17 @@
+{
+  "name": "xpcrawl-kotlin-example",
+  "version": "1.0.0",
+  "main": "xpcrawl-kotlin-example.js",
+  "types": "xpcrawl-kotlin-example.d.ts",
+  "devDependencies": {
+    "source-map-support": "0.5.21",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "xpcrawl": "1.0.0",
+    "format-util": "^1.0.5"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

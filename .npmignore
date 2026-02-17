@@ -1,0 +1,23 @@
+# Fichiers de données
+covers/
+images/
+*.jpg
+*.png
+*.html
+
+# Dépendances et build
+node_modules/
+dist/
+build/
+.gradle/
+.idea/
+
+# Dotfiles
+.DS_Store
+.env
+.agent/
+.git/
+
+# Fichiers de test locaux
+temp/
+debug_*.html
