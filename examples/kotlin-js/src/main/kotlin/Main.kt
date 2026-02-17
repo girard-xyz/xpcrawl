@@ -18,7 +18,7 @@ suspend fun main() {
     }).await()
     
     println("Found ${results.size} titles:")
-    results.forEach { println("  - $it") }
+    results.forEach { title -> println("  - $title") }
     
     // Example 2: With callbacks
     println("\nExample 2: With callbacks")
@@ -57,5 +57,5 @@ suspend fun main() {
     }).await()
     
     println("Book titles:")
-    bookResults.forEach { println("  - $it") }
+    bookResults.forEach { title -> println("  - $title") }
 }

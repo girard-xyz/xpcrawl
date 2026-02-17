@@ -75,7 +75,7 @@ async function main() {
             });
         } else if (isInputPiped) {
             // Stdin mode
-            const rl = readline.createInterface({
+            const readlineInterface = readline.createInterface({
                 input: process.stdin,
                 output: process.stdout,
                 terminal: false
@@ -86,7 +86,7 @@ async function main() {
             let htmlBuffer = '';
             const urls = [];
 
-            for await (const line of rl) {
+            for await (const line of readlineInterface) {
                 const trimmed = line.trim();
                 if (!trimmed) continue;
 

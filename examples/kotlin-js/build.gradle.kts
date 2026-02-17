@@ -21,5 +21,5 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     
     // Using the published package from npm
-    implementation(npm("xpcrawl", "1.0.1"))
+    implementation(npm("xpcrawl", "1.0.3"))
 }
