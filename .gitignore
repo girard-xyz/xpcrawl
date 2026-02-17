@@ -1,0 +1,22 @@
+node_modules/
+.vscode/
+.DS_Store
+
+# Data and Scraping outputs
+covers/
+images/
+debug_*.html
+*.tgz
+
+# Build and environment
+dist/
+build/
+.gradle/
+.idea/
+.env
+
+# Testing
+temp/
+package-lock.json
+yarn-error.log
+yarn.lock
