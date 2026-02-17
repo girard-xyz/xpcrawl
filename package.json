@@ -1,9 +1,17 @@
 {
   "name": "xpcrawl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A versatile Puppeteer-based web crawler with XPath support, pagination, piping, and stealth capabilities.",
   "main": "lib/crawler.js",
   "types": "lib/crawler.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girard-xyz/xpcrawl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/girard-xyz/xpcrawl/issues"
+  },
+  "homepage": "https://github.com/girard-xyz/xpcrawl#readme",
   "bin": {
     "xpcrawl": "./index.js"
   },
