@@ -1,5 +1,11 @@
 # xpcrawl
 
+[![npm version](https://img.shields.io/npm/v/xpcrawl.svg)](https://www.npmjs.com/package/xpcrawl)
+[![npm downloads](https://img.shields.io/npm/dm/xpcrawl.svg)](https://www.npmjs.com/package/xpcrawl)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue.svg)](https://www.typescriptlang.org/)
+[![Kotlin](https://img.shields.io/badge/Language-Kotlin-orange.svg)](https://kotlinlang.org/)
+
 A versatile Puppeteer-based web crawler designed to extract data using XPath. It supports pagination, piping for multi-step extraction, and includes stealth features to bypass some anti-crawling mechanisms.
 
 ## Features
