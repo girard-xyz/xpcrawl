@@ -1,6 +1,6 @@
 {
   "name": "xpcrawl",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A versatile Puppeteer-based web crawler with XPath support, pagination, piping, and stealth capabilities.",
   "main": "lib/crawler.js",
   "types": "lib/crawler.d.ts",
