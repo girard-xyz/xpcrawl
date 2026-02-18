@@ -48,7 +48,16 @@ echo <url> | xpcrawl <xpath> [--delay <ms>]
 ### Arguments
 
 - `<url>`: The starting URL to crawl.
-- `<xpath>`: The XPath query to extract data.
+- `<xpath>`: (Optional) The XPath query to extract data. If omitted, xpcrawl enters **Smart Mode**.
+
+### Smart Mode
+
+If you don't provide an XPath, xpcrawl will automatically attempt to extract the most relevant content from the page, including:
+- Page Title
+- Headings (H1, H2, H3)
+- Paragraphs
+- Link targets (hrefs)
+- Image sources (srcs)
 - `--paginate <xpath>`: (Optional) XPath to find the "Next Page" link.
 - `--delay <ms>`: (Optional) Delay in milliseconds between requests (adds random jitter).
 - `--visible`: (Optional) Run the browser in visible mode (useful for debugging).
@@ -223,6 +232,12 @@ async function crawlWithCaptchaHandling() {
 See the [examples directory](./examples) for more usage patterns:
 
 ```javascript
+// Smart Mode (automatic extraction)
+const results = await crawl({
+    url: 'https://example.com'
+    // xpath is optional!
+});
+
 // With pagination
 const results = await crawl({
     url: 'https://example.com/blog',

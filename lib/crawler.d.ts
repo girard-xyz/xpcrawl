@@ -12,7 +12,7 @@ export interface CrawlOptions {
     /**
      * XPath query to extract data
      */
-    xpath: string;
+    xpath?: string;
 
     /**
      * XPath to find next page link for pagination

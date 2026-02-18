@@ -53,8 +53,8 @@ async function main() {
     try {
         const { url: argUrl, xpath, paginationXpath, delay, headless } = parseArgs();
 
-        if (!xpath) {
-            console.error('Usage: \n  xpcrawl <url> <xpath> [--paginate <pagination_xpath>] [--delay <ms>] [--visible]\n  echo <url> | xpcrawl <xpath>');
+        if (!xpath && !argUrl && process.stdin.isTTY) {
+            console.error('Usage: \n  xpcrawl <url> [xpath] [--paginate <pagination_xpath>] [--delay <ms>] [--visible]\n  echo <url> | xpcrawl [xpath]');
             process.exit(1);
         }
 
