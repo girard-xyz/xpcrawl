@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { crawl } = require('./lib/crawler');
 const readline = require('readline');
+const pkg = require('./package.json');
 
 // Helper to parse CLI args
 function parseArgs() {
@@ -12,8 +13,18 @@ function parseArgs() {
     let paginateNext = false;
     let delay = 0;
     let delayNext = false;
+    let showVersion = false;
+    let showHelp = false;
 
     for (const arg of args) {
+        if (arg === '--version' || arg === '-v') {
+            showVersion = true;
+            continue;
+        }
+        if (arg === '--help' || arg === '-h') {
+            showHelp = true;
+            continue;
+        }
         if (arg === '--visible') {
             headless = false;
             continue;
@@ -46,16 +57,30 @@ function parseArgs() {
         }
     }
 
-    return { url, xpath, paginationXpath, delay, headless };
+    return { url, xpath, paginationXpath, delay, headless, showVersion, showHelp };
 }
 
 async function main() {
     try {
-        const { url: argUrl, xpath, paginationXpath, delay, headless } = parseArgs();
+        const { url: argUrl, xpath, paginationXpath, delay, headless, showVersion, showHelp } = parseArgs();
 
-        if (!xpath && !argUrl && process.stdin.isTTY) {
-            console.error('Usage: \n  xpcrawl <url> [xpath] [--paginate <pagination_xpath>] [--delay <ms>] [--visible]\n  echo <url> | xpcrawl [xpath]');
-            process.exit(1);
+        if (showVersion) {
+            console.log(`xpcrawl v${pkg.version}`);
+            process.exit(0);
+        }
+
+        if (showHelp || (!xpath && !argUrl && process.stdin.isTTY)) {
+            console.error(`xpcrawl v${pkg.version}\n`);
+            console.error('Usage:');
+            console.error('  xpcrawl <url> [xpath] [options]');
+            console.error('  echo <url> | xpcrawl [xpath] [options]\n');
+            console.error('Options:');
+            console.error('  --paginate <xpath>  XPath to find the "Next Page" link');
+            console.error('  --delay <ms>       Delay in milliseconds between requests');
+            console.error('  --visible          Run the browser in visible mode');
+            console.error('  --version, -v      Show version number');
+            console.error('  --help, -h         Show help');
+            process.exit(showHelp ? 0 : 1);
         }
 
         // Check if we're receiving piped input
